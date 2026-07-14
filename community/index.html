@@ -60,6 +60,14 @@
   .menu-toggle svg { width: 18px; height: 18px; stroke: var(--ink); }
   .mobile-nav { display: none; flex-direction: column; gap: 2px; padding: 10px 28px 22px; border-top: 1px solid var(--line-soft); font-family: var(--font-display); font-weight: 600; }
   .mobile-nav a { display: block; padding: 11px 4px; text-decoration: none; color: var(--ink-soft); border-bottom: 1px solid var(--line-soft); }
+  .mobile-nav-group { display: flex; flex-direction: column; }
+  .mobile-nav-toggle { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 11px 4px; background: none; border: none; border-bottom: 1px solid var(--line-soft); font: inherit; font-family: var(--font-display); font-weight: 600; color: var(--ink-soft); text-align: left; cursor: pointer; }
+  .mobile-nav-toggle:hover { color: var(--ink); }
+  .mobile-nav-toggle .chevron { width: 14px; height: 14px; stroke: currentColor; transition: transform 0.2s ease; flex: none; }
+  .mobile-nav-group.is-open .mobile-nav-toggle .chevron { transform: rotate(180deg); }
+  .mobile-nav-submenu { display: none; flex-direction: column; padding-left: 16px; }
+  .mobile-nav-group.is-open .mobile-nav-submenu { display: flex; }
+  .mobile-nav-submenu a { font-weight: 500; }
   .mobile-nav a:hover { color: var(--ink); }
   body.nav-open .mobile-nav { display: flex; }
   body.nav-open .menu-toggle .i-open { display: none; }
@@ -214,15 +222,21 @@
     </div>
   </div>
   <nav class="mobile-nav" aria-label="Mobile">
-    <a href="../community/index.html">Community Engagement</a>
-    <a href="../commercial/index.html">Commercial Development</a>
-    <a href="../partnerships/index.html">Collaborators</a>
+    <div class="mobile-nav-group">
+      <button class="mobile-nav-toggle" type="button" aria-expanded="false">
+        Services
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="mobile-nav-submenu">
+        <a href="../community/index.html">Community Engagement</a>
+        <a href="../commercial/index.html">Commercial Development</a>
+        <a href="../partnerships/index.html">Collaborators</a>
+      </div>
+    </div>
     <a href="../who-we-help/index.html">Who We Help</a>
     <a href="../how-we-help-you/index.html">How We Help You</a>
     <a href="../events/index.html">Events</a>
     <a href="../blog/index.html">Insights</a>
-    <a href="../index.html#testimonials">Testimonials</a>
-    <a href="../index.html#faq">FAQs</a>
     <a href="../about/index.html">About</a>
     <a href="../contact/index.html">Contact</a>
   </nav>
@@ -449,6 +463,13 @@
   (function () {
     var menuToggle = document.getElementById('menuToggle');
     if (menuToggle) menuToggle.addEventListener('click', function () { document.body.classList.toggle('nav-open'); });
+    Array.prototype.slice.call(document.querySelectorAll('.mobile-nav-toggle')).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var group = btn.closest('.mobile-nav-group');
+        var isOpen = group.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
   })();
   (function () {
     var track = document.querySelector('.testi-track');
