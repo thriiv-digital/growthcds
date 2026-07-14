@@ -362,12 +362,12 @@
     display: grid;
     grid-template-columns: repeat(4, auto);
     justify-content: start;
-    gap: 14px 24px;
+    gap: 14px 72px;
     margin-top: 22px;
+    padding-bottom: 20px;
   }
   .hero-stats .stat {
     position: relative;
-    padding-bottom: 34px;
   }
   .hero-stats .stat .num {
     font-family: var(--font-display);
@@ -382,7 +382,6 @@
     position: absolute;
     top: 100%;
     left: 0;
-    max-width: 78px;
     margin-top: 4px;
     font-size: 0.68rem;
     font-weight: 600;
@@ -390,6 +389,7 @@
     text-transform: uppercase;
     color: rgba(251, 248, 238, 0.68);
     line-height: 1.25;
+    white-space: nowrap;
   }
   .hero-stats .lab-short { display: none; }
 
