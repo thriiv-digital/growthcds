@@ -316,7 +316,7 @@
     position: fixed;
     left: -60px;
     top: 140px;
-    width: 380px;
+    width: 485px;
     overflow: hidden;
     opacity: 0.06;
     z-index: 1;
@@ -887,7 +887,7 @@
 </head>
 <body>
 
-<div class="hero-bird" aria-hidden="true"><img src="images/gcds-logo-bird.png" alt="" /></div>
+<div class="hero-bird" aria-hidden="true"><img src="images/logo-wmark-growthcds.webp" alt="" /></div>
 
 <header class="site">
   <div class="nav-row">
@@ -999,14 +999,14 @@
     </div>
     <div class="brand-marquee">
       <div class="brand-track">
-        <div class="brand-item cookieman-boost"><img src="images/cookieman-marquee.svg" alt="Cookieman" /></div>
-        <div class="brand-item"><img src="images/hornsby-connect.jpg" alt="Hornsby Connect" /></div>
+        <div class="brand-item cookieman-boost"><img src="images/cookieman-marquee.svg" alt="Cookieman" width="901" height="176" /></div>
+        <div class="brand-item"><img src="images/hornsby-connect.jpg" alt="Hornsby Connect" width="281" height="179" /></div>
         <div class="brand-item"><img src="images/totalconcept.webp" alt="Total Concept Projects" width="1500" height="748" /></div>
-        <div class="brand-item"><img src="images/ibm.png" alt="IBM" /></div>
-        <div class="brand-item mypath-boost"><img src="images/mypath-wealth.svg" alt="myPath Wealth" /></div>
-        <div class="brand-item featured"><img src="images/hado.png" alt="Hado Australia" /></div>
-        <div class="brand-item ruf-boost"><img src="images/ruf-diamond.png" alt="Ruf Diamond" /></div>
-        <div class="brand-item beans-boost"><img src="images/mythreebeans.webp" alt="My Three Beans" /></div>
+        <div class="brand-item"><img src="images/ibm.png" alt="IBM" width="738" height="321" /></div>
+        <div class="brand-item mypath-boost"><img src="images/mypath-wealth.svg" alt="myPath Wealth" width="538" height="100" /></div>
+        <div class="brand-item featured"><img src="images/hado.png" alt="Hado Australia" width="120" height="120" /></div>
+        <div class="brand-item ruf-boost"><img src="images/ruf-diamond.png" alt="Ruf Diamond" width="300" height="58" /></div>
+        <div class="brand-item beans-boost"><img src="images/mythreebeans.webp" alt="My Three Beans" width="512" height="512" /></div>
         <div class="brand-item auscomply-boost"><img src="images/auscomply.jpg" alt="AusComply" width="900" height="400" /></div>
       </div>
     </div>
@@ -1386,33 +1386,32 @@
   (function () {
     var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Header: shrink logo and reveal the bottom border once scrolled
+    // Header (shrink logo, reveal bottom border once scrolled) and hero bird watermark
+    // (fixed-pinned behind the header, clipped to the hero's actual bottom edge since the
+    // hero's height tracks viewport height but the bird's own height doesn't, and hidden
+    // once scrolled past the hero) share one handler: all layout reads happen before any
+    // writes, so toggling the header class doesn't force a synchronous reflow for the
+    // bird's getBoundingClientRect() reads right after.
     var siteHeader = document.querySelector('header.site');
-    if (siteHeader) {
-      var updateHeaderScroll = function () {
-        siteHeader.classList.toggle('is-scrolled', window.pageYOffset > 8);
-      };
-      window.addEventListener('scroll', updateHeaderScroll, { passive: true });
-      updateHeaderScroll();
-    }
-
-    // Hero bird watermark: fixed-pinned behind the header, clipped to the hero's actual
-    // bottom edge (the hero's height tracks viewport height, but the bird's own height
-    // doesn't, so on shorter windows it would otherwise bleed into the next section),
-    // and hidden once scrolled past the hero
     var heroBird = document.querySelector('.hero-bird');
     var heroSection = document.querySelector('.hero');
-    if (heroBird && heroSection) {
-      var updateBird = function () {
-        var heroRect = heroSection.getBoundingClientRect();
-        var birdTop = heroBird.getBoundingClientRect().top;
-        heroBird.style.height = Math.max(0, heroRect.bottom - birdTop) + 'px';
-        var heroBottomDocY = heroRect.bottom + window.pageYOffset;
-        heroBird.classList.toggle('is-hidden', window.pageYOffset + siteHeader.offsetHeight >= heroBottomDocY);
+    if (siteHeader) {
+      var updateHeaderAndBird = function () {
+        var scrolled = window.pageYOffset > 8;
+        var heroRect = heroBird && heroSection ? heroSection.getBoundingClientRect() : null;
+        var birdTop = heroBird ? heroBird.getBoundingClientRect().top : null;
+        var headerHeight = siteHeader.offsetHeight;
+
+        siteHeader.classList.toggle('is-scrolled', scrolled);
+        if (heroBird && heroSection) {
+          heroBird.style.height = Math.max(0, heroRect.bottom - birdTop) + 'px';
+          var heroBottomDocY = heroRect.bottom + window.pageYOffset;
+          heroBird.classList.toggle('is-hidden', window.pageYOffset + headerHeight >= heroBottomDocY);
+        }
       };
-      window.addEventListener('scroll', updateBird, { passive: true });
-      window.addEventListener('resize', updateBird);
-      updateBird();
+      window.addEventListener('scroll', updateHeaderAndBird, { passive: true });
+      window.addEventListener('resize', updateHeaderAndBird);
+      updateHeaderAndBird();
     }
 
     // Hero photo: rotate through images every 5 seconds
