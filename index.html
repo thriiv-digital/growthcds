@@ -17,7 +17,9 @@
 <link rel="icon" type="image/png" href="images/GCDS-logo-crop.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 <style>
   :root {
     --ink: #1A2A1F;
@@ -315,6 +317,7 @@
     left: -60px;
     top: 140px;
     width: 380px;
+    overflow: hidden;
     opacity: 0.06;
     z-index: 0;
     pointer-events: none;
@@ -889,7 +892,7 @@
 <header class="site">
   <div class="nav-row">
     <a href="#top" class="brand">
-      <img class="logo-mark" src="images/GCDS-logo-crop.png" alt="Growth Concept Development Services" />
+      <img class="logo-mark" src="images/GCDS-logo-crop.png" alt="Growth Concept Development Services" width="554" height="512" />
     </a>
     <nav class="primary" aria-label="Primary">
       <ul>
@@ -977,9 +980,9 @@
         </div>
       </div>
       <div class="hero-photo">
-        <img class="is-active" src="images/business-owners-networking-at-a-corporate-expo.jpg" alt="Business owners networking at a corporate expo" />
-        <img src="images/industry-conference-presentation.jpg" alt="Industry conference presentation" />
-        <img src="images/event-shbng-networking.jpg" alt="Shellharbour and Beyond networking group meetup" />
+        <img class="is-active" src="images/business-owners-networking-at-a-corporate-expo.jpg" alt="Business owners networking at a corporate expo" width="825" height="1100" fetchpriority="high" />
+        <img src="images/industry-conference-presentation.jpg" alt="Industry conference presentation" width="1100" height="825" />
+        <img src="images/event-shbng-networking.jpg" alt="Shellharbour and Beyond networking group meetup" width="1100" height="672" />
         <div class="hero-dots">
           <button class="hero-dot is-active" data-index="0" aria-label="Show image 1" type="button"></button>
           <button class="hero-dot" data-index="1" aria-label="Show image 2" type="button"></button>
@@ -998,13 +1001,13 @@
       <div class="brand-track">
         <div class="brand-item cookieman-boost"><img src="images/cookieman-marquee.svg" alt="Cookieman" /></div>
         <div class="brand-item"><img src="images/hornsby-connect.jpg" alt="Hornsby Connect" /></div>
-        <div class="brand-item"><img src="images/totalconcept.webp" alt="Total Concept Projects" /></div>
+        <div class="brand-item"><img src="images/totalconcept.webp" alt="Total Concept Projects" width="1500" height="748" /></div>
         <div class="brand-item"><img src="images/ibm.png" alt="IBM" /></div>
         <div class="brand-item mypath-boost"><img src="images/mypath-wealth.svg" alt="myPath Wealth" /></div>
         <div class="brand-item featured"><img src="images/hado.png" alt="Hado Australia" /></div>
         <div class="brand-item ruf-boost"><img src="images/ruf-diamond.png" alt="Ruf Diamond" /></div>
         <div class="brand-item beans-boost"><img src="images/mythreebeans.webp" alt="My Three Beans" /></div>
-        <div class="brand-item auscomply-boost"><img src="images/auscomply.jpg" alt="AusComply" /></div>
+        <div class="brand-item auscomply-boost"><img src="images/auscomply.jpg" alt="AusComply" width="900" height="400" /></div>
       </div>
     </div>
   </section>
@@ -1299,7 +1302,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="#top" class="brand"><img class="logo-mark" src="images/GCDS-logo-crop.png" alt="Growth Concept Development Services" /></a>
+        <a href="#top" class="brand"><img class="logo-mark" src="images/GCDS-logo-crop.png" alt="Growth Concept Development Services" width="554" height="512" /></a>
         <p>Where business meets community and big ideas come to life. Everything starts with a conversation.</p>
       </div>
       <div class="foot-col">
@@ -1393,16 +1396,23 @@
       updateHeaderScroll();
     }
 
-    // Hero bird watermark: fixed-pinned behind the header, hidden once scrolled past the hero
+    // Hero bird watermark: fixed-pinned behind the header, clipped to the hero's actual
+    // bottom edge (the hero's height tracks viewport height, but the bird's own height
+    // doesn't, so on shorter windows it would otherwise bleed into the next section),
+    // and hidden once scrolled past the hero
     var heroBird = document.querySelector('.hero-bird');
     var heroSection = document.querySelector('.hero');
     if (heroBird && heroSection) {
-      var updateBirdVisibility = function () {
-        var heroBottomDocY = heroSection.getBoundingClientRect().bottom + window.pageYOffset;
+      var updateBird = function () {
+        var heroRect = heroSection.getBoundingClientRect();
+        var birdTop = heroBird.getBoundingClientRect().top;
+        heroBird.style.height = Math.max(0, heroRect.bottom - birdTop) + 'px';
+        var heroBottomDocY = heroRect.bottom + window.pageYOffset;
         heroBird.classList.toggle('is-hidden', window.pageYOffset + siteHeader.offsetHeight >= heroBottomDocY);
       };
-      window.addEventListener('scroll', updateBirdVisibility, { passive: true });
-      updateBirdVisibility();
+      window.addEventListener('scroll', updateBird, { passive: true });
+      window.addEventListener('resize', updateBird);
+      updateBird();
     }
 
     // Hero photo: rotate through images every 5 seconds
