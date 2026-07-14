@@ -65,7 +65,7 @@
   body.nav-open .menu-toggle .i-open { display: none; }
   .menu-toggle .i-close { display: none; }
   body.nav-open .menu-toggle .i-close { display: block; }
-  @media (max-width: 980px) { nav.primary, .nav-phone { display: none; } .menu-toggle { display: inline-flex; } }
+  @media (max-width: 980px) { nav.primary { display: none; } .nav-actions > a.btn-primary { display: none; } .menu-toggle { display: inline-flex; } }
 
   /* page banner */
   .page-banner { position: relative; overflow: hidden; background: var(--forest); min-height: 320px; display: grid; align-items: center; padding: 48px 0; }
@@ -220,7 +220,7 @@
         0451 248 292
       </a>
       <a class="btn btn-primary" href="../contact/index.html">Start a conversation</a>
-      <button class="menu-toggle" aria-label="Toggle menu" onclick="document.body.classList.toggle('nav-open')">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" type="button">
         <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
         <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
       </button>
@@ -458,6 +458,10 @@
 </footer>
 
 <script>
+  (function () {
+    var menuToggle = document.getElementById('menuToggle');
+    if (menuToggle) menuToggle.addEventListener('click', function () { document.body.classList.toggle('nav-open'); });
+  })();
   (function () {
     var track = document.querySelector('.testi-track');
     var testiDots = Array.prototype.slice.call(document.querySelectorAll('.testi-dot'));
