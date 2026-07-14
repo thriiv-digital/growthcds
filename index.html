@@ -365,6 +365,10 @@
     gap: 14px 24px;
     margin-top: 22px;
   }
+  .hero-stats .stat {
+    position: relative;
+    padding-bottom: 34px;
+  }
   .hero-stats .stat .num {
     font-family: var(--font-display);
     font-size: 1.4rem;
@@ -372,8 +376,13 @@
     color: #FBF8EE;
     font-variant-numeric: tabular-nums;
     line-height: 1;
+    white-space: nowrap;
   }
   .hero-stats .stat .lab {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    max-width: 78px;
     margin-top: 4px;
     font-size: 0.68rem;
     font-weight: 600;
