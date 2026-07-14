@@ -17,7 +17,7 @@ while ($listener.IsListening) {
   $res = $context.Response
   try {
     $path = $req.Url.LocalPath
-    if ($path -eq "/") { $path = "/lp-web-wollongong.html" }
+    if ($path -eq "/") { $path = "/index.html" }
     $filePath = Join-Path $root ($path.TrimStart("/"))
     if ((Test-Path $filePath -PathType Container) -and (Test-Path (Join-Path $filePath "index.html") -PathType Leaf)) {
       $filePath = Join-Path $filePath "index.html"
