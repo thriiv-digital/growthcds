@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Contact – Growth Concept Development Services</title>
+<title>Blog / News – Growth Concept Development Services</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Let's build something great together. Whether you're growing locally or expanding internationally, we'll help you turn your goals into action." />
-<link rel="icon" type="image/png" href="../images/favicon-gcds.png" />
+<meta name="description" content="News, insights, and updates from Growth Concept Development Services." />
+<link rel="icon" type="image/png" href="images/favicon-gcds.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,16 +19,17 @@
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
+  [id] { scroll-margin-top: 100px; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
   body { margin: 0; background: var(--stone); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
   img, svg { max-width: 100%; display: block; }
   a { color: inherit; }
-  a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; border-radius: 2px; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; border-radius: 2px; }
   .wrap { max-width: 1440px; margin: 0 auto; padding: 0 28px; }
   h1, h2, h3, h4 { font-family: var(--font-display); color: var(--ink); margin: 0; text-wrap: balance; letter-spacing: -0.01em; line-height: 1.08; }
   .eyebrow { font-family: var(--font-display); font-weight: 600; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ember-strong); margin: 0 0 14px; }
   .lede { font-size: 1.1rem; color: var(--ink-soft); max-width: 62ch; }
-  .btn { font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 13px 24px; border-radius: 3px; text-decoration: none; border: 1.5px solid transparent; cursor: pointer; transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease; white-space: nowrap; }
+  .btn { font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 9px; padding: 13px 24px; border-radius: 3px; text-decoration: none; border: 1.5px solid transparent; cursor: pointer; transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease; white-space: nowrap; }
   .btn-primary { background: var(--ember); color: #FFFCF7; }
   .btn-primary:hover { background: var(--ember-strong); transform: translateY(-1px); }
   .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
@@ -79,47 +80,44 @@
   @media (max-width: 980px) { nav.primary { display: none; } .nav-actions > a.btn-primary { display: none; } .menu-toggle { display: inline-flex; } .nav-row { padding-left: 14px; padding-right: 14px; } .brand img.logo-mark { height: 88px; } header.site.is-scrolled .brand img.logo-mark { height: 88px; } .nav-phone { white-space: nowrap; flex-shrink: 0; } }
 
   /* page banner */
-  .page-banner { position: relative; overflow: hidden; background: var(--forest); min-height: 320px; display: grid; align-items: center; padding: 48px 0; }
+  .page-banner { position: relative; overflow: hidden; background: var(--forest); min-height: 260px; display: grid; align-items: center; padding: 48px 0; }
   .page-banner-bird { position: absolute; right: -40px; top: 50%; transform: translateY(-50%); width: 340px; z-index: 0; opacity: 0.1; pointer-events: none; }
   .page-banner-bird img { width: 100%; height: auto; display: block; }
   .page-banner .wrap { position: relative; z-index: 1; width: 100%; }
   .page-banner .eyebrow { color: var(--gold); }
   .page-banner h1 { color: #FBF8EE; font-size: clamp(1.9rem, 2vw + 1rem, 2.8rem); font-weight: 800; }
   .page-banner .lede { color: rgba(251, 248, 238, 0.82); margin-top: 14px; max-width: 60ch; }
-  @media (max-width: 760px) { .page-banner { padding: 36px 0; min-height: 260px; } .page-banner-bird { width: 200px; right: -60px; } }
+  @media (max-width: 760px) { .page-banner { padding: 36px 0; min-height: 220px; } .page-banner-bird { width: 200px; right: -60px; } }
 
   section { padding: 92px 0; }
+  section.tight { padding: 72px 0; }
 
-  /* contact layout */
-  .contact-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 48px; align-items: start; }
-  .contact-info { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 36px 32px; }
-  .contact-info .item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 24px; }
-  .contact-info .item:last-of-type { margin-bottom: 0; }
-  .contact-info .ic-circle { width: 40px; height: 40px; border-radius: 50%; background: var(--ember-tint); display: flex; align-items: center; justify-content: center; flex: none; }
-  .contact-info .ic-circle svg { width: 18px; height: 18px; stroke: var(--ember-strong); }
-  .contact-info h4 { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 4px; }
-  .contact-info a, .contact-info p.val { font-family: var(--font-display); font-weight: 600; font-size: 1rem; color: var(--ink); text-decoration: none; margin: 0; }
-  .contact-info a:hover { color: var(--forest); }
-  .proposal-note { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); }
-  .proposal-note h4 { font-family: var(--font-display); font-weight: 700; font-size: 0.95rem; margin-bottom: 8px; }
-  .proposal-note p { margin: 0; color: var(--ink-soft); font-size: 0.9rem; }
+  /* post grid */
+  .post-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 1440px; margin: 0 auto; }
+  .post-card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 32px; display: flex; flex-direction: column; gap: 14px; text-decoration: none; color: inherit; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .post-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(26, 20, 10, 0.1); }
+  .post-cat { font-family: var(--font-display); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ember-strong); }
+  .post-card h2 { font-size: 1.2rem; font-weight: 700; }
+  .post-date { font-size: 0.85rem; color: var(--ink-soft); }
+  .post-excerpt { color: var(--ink-soft); font-size: 0.94rem; margin: 0; }
+  .post-readmore { margin-top: auto; font-family: var(--font-display); font-weight: 700; font-size: 0.86rem; color: var(--forest); }
+  @media (max-width: 980px) { .post-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .post-grid { grid-template-columns: 1fr; } }
 
-  .contact-form { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 36px 32px; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .field { margin-bottom: 20px; }
-  .field label { display: block; font-family: var(--font-display); font-weight: 600; font-size: 0.85rem; color: var(--ink); margin-bottom: 7px; }
-  .field label .req { color: var(--ember-strong); }
-  .field input, .field textarea { width: 100%; font-family: var(--font-body); font-size: 0.95rem; color: var(--ink); background: var(--stone); border: 1px solid var(--line); border-radius: 5px; padding: 12px 14px; transition: border-color 0.15s ease; }
-  .field input:focus, .field textarea:focus { border-color: var(--forest); }
-  .field textarea { resize: vertical; min-height: 130px; }
-  .char-count { text-align: right; font-size: 0.76rem; color: var(--ink-soft); margin-top: 6px; }
-  .form-note { font-size: 0.82rem; color: var(--ink-soft); margin-top: 4px; }
-  .form-status { margin-top: 16px; font-family: var(--font-display); font-weight: 600; font-size: 0.9rem; display: none; }
-  .form-status.is-visible { display: block; }
-  .form-status.ok { color: var(--forest); }
-  .form-status.err { color: var(--ember-strong); }
-  @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
-  @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+  /* connect cta */
+  section.connect { background: var(--forest); position: relative; overflow: hidden; }
+  section.connect::before { content: ""; position: absolute; top: -140px; right: -100px; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 255, 255, 0.09), transparent 70%); pointer-events: none; }
+  section.connect::after { content: ""; position: absolute; bottom: -160px; left: -120px; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 255, 255, 0.06), transparent 70%); pointer-events: none; }
+  section.connect .wrap { position: relative; z-index: 2; }
+  .connect-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+  section.connect .eyebrow { color: #F0C48F; justify-content: center; }
+  section.connect h2 { color: #FBF8EE; font-size: clamp(2rem, 2.4vw + 1rem, 3rem); }
+  section.connect p.lede { color: rgba(245, 242, 230, 0.82); max-width: 56ch; margin: 18px auto 0; }
+  .connect-actions { display: flex; justify-content: center; align-items: center; gap: 30px; margin-top: 38px; flex-wrap: wrap; }
+  .connect-phone { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; text-decoration: none; color: #FBF8EE; display: flex; align-items: center; gap: 10px; transition: color 0.15s ease; }
+  .connect-phone svg { width: 18px; height: 18px; stroke: var(--ember-tint); transition: stroke 0.15s ease, transform 0.2s ease; }
+  .connect-phone:hover { color: var(--ember-tint); }
+  .connect-phone:hover svg { stroke: #FBF8EE; transform: rotate(-10deg) scale(1.15); }
 
   /* footer */
   footer.site { background: var(--stone); color: var(--ink-soft); border-top: 1px solid var(--line); padding: 64px 0 28px; }
@@ -153,36 +151,36 @@
 
 <header class="site">
   <div class="nav-row">
-    <a href="../index.html#top" class="brand">
-      <img class="logo-mark" src="../images/GCDS-logo-crop.png" alt="GCDS — Growth Concept Development Services" />
+    <a href="index.html#top" class="brand">
+      <img class="logo-mark" src="images/GCDS-logo-crop.png" alt="GCDS — Growth Concept Development Services" />
     </a>
     <nav class="primary" aria-label="Primary">
       <ul>
         <li class="has-drop">
-          <a class="top-link" href="../community/index.html">Services <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+          <a class="top-link" href="community.html">Services <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
           <div class="drop">
-            <a href="../community/index.html">Community Engagement</a>
-            <a href="../commercial/index.html">Commercial Development</a>
-            <a href="../partnerships/index.html">Collaborators</a>
-            <a href="../events/index.html">Local Events &amp; Activations</a>
+            <a href="community.html">Community Engagement</a>
+            <a href="commercial.html">Commercial Development</a>
+            <a href="partnerships.html">Collaborators</a>
+            <a href="events.html">Local Events &amp; Activations</a>
           </div>
         </li>
-        <li><a class="top-link" href="../who-we-help/index.html">Who We Help</a></li>
-        <li><a class="top-link" href="../how-we-help-you/index.html">How We Help You</a></li>
+        <li><a class="top-link" href="who-we-help.html">Who We Help</a></li>
+        <li><a class="top-link" href="how-we-help-you.html">How We Help You</a></li>
         <li class="has-drop">
-          <a class="top-link" href="../events/index.html">Events <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+          <a class="top-link" href="events.html">Events <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
           <div class="drop">
-            <a href="../events/index.html#upcoming">Upcoming Events</a>
-            <a href="../events/index.html#past">Past Events</a>
+            <a href="events.html#upcoming">Upcoming Events</a>
+            <a href="events.html#past">Past Events</a>
           </div>
         </li>
-        <li class="has-drop">
-          <a class="top-link" href="../about/index.html">About Us <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <li class="has-drop current">
+          <a class="top-link" href="about.html">About Us <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
           <div class="drop">
-            <a href="../about/index.html">About</a>
-            <a href="../index.html#testimonials">Testimonials</a>
-            <a href="../index.html#faq">FAQs</a>
-            <a href="../blog/index.html">Insights</a>
+            <a href="about.html">About</a>
+            <a href="index.html#testimonials">Testimonials</a>
+            <a href="index.html#faq">FAQs</a>
+            <a href="blog.html">Insights</a>
           </div>
         </li>
       </ul>
@@ -192,7 +190,7 @@
         <span class="ico-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
         0451 248 292
       </a>
-      <a class="btn btn-primary" href="../contact/index.html">Start a conversation</a>
+      <a class="btn btn-primary" href="contact.html">Start a conversation</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" type="button">
         <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
         <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
@@ -206,90 +204,57 @@
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="mobile-nav-submenu">
-        <a href="../community/index.html">Community Engagement</a>
-        <a href="../commercial/index.html">Commercial Development</a>
-        <a href="../partnerships/index.html">Collaborators</a>
+        <a href="community.html">Community Engagement</a>
+        <a href="commercial.html">Commercial Development</a>
+        <a href="partnerships.html">Collaborators</a>
       </div>
     </div>
-    <a href="../who-we-help/index.html">Who We Help</a>
-    <a href="../how-we-help-you/index.html">How We Help You</a>
-    <a href="../events/index.html">Events</a>
-    <a href="../blog/index.html">Insights</a>
-    <a href="../about/index.html">About</a>
-    <a href="../contact/index.html">Contact</a>
+    <a href="who-we-help.html">Who We Help</a>
+    <a href="how-we-help-you.html">How We Help You</a>
+    <a href="events.html">Events</a>
+    <a href="blog.html">Insights</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
 <main id="top">
 
   <section class="page-banner">
-    <div class="page-banner-bird" aria-hidden="true"><img src="../images/gcds-logo-bird.png" alt="" /></div>
+    <div class="page-banner-bird" aria-hidden="true"><img src="images/gcds-logo-bird.png" alt="" /></div>
     <div class="wrap">
-      <p class="eyebrow">Contact</p>
-      <h1>Let's build something great together.</h1>
-      <p class="lede">Whether you're growing locally or expanding internationally, we'll help you turn your goals into action.</p>
+      <p class="eyebrow">Insights</p>
+      <h1>Blog / News</h1>
+      <p class="lede">Updates, stories, and insights from Growth Concept Development Services.</p>
     </div>
   </section>
 
-  <section>
+  <section class="tight">
     <div class="wrap">
-      <div class="contact-grid">
-        <div class="contact-info">
-          <div class="item">
-            <span class="ic-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span>
-            <div>
-              <h4>Email</h4>
-              <a href="mailto:luke@growthcds.com.au">luke@growthcds.com.au</a>
-            </div>
-          </div>
-          <div class="item">
-            <span class="ic-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-            <div>
-              <h4>Phone</h4>
-              <a href="tel:+61451248292">0451 248 292</a>
-            </div>
-          </div>
-          <div class="item">
-            <span class="ic-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            <div>
-              <h4>Location</h4>
-              <p class="val">Illawarra Region (remote-friendly)</p>
-            </div>
-          </div>
-          <div class="proposal-note">
-            <h4>Request a Proposal</h4>
-            <p>Share your goals and timeline — we'll come back with a clear plan and next steps.</p>
-          </div>
-        </div>
+      <div class="post-grid">
+        <a class="post-card" href="celebrating-30-years-in-events-exhibitions.html">
+          <h2>Celebrating 30 Years In Events &amp; Exhibitions</h2>
+          <span class="post-date">October 6, 2025</span>
+          <p class="post-excerpt">When I first started out in this industry three decades ago, I could never have imagined the incredible people, places, and opportunities it would bring my way. Each project has taught me something new about connection, creativity&hellip;</p>
+          <span class="post-readmore">Read more &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xdaqoqqd" method="POST">
-          <p class="eyebrow">Online Enquiry Form</p>
-          <div class="form-row">
-            <div class="field">
-              <label for="firstName">First Name <span class="req">*</span></label>
-              <input type="text" id="firstName" name="firstName" required />
-            </div>
-            <div class="field">
-              <label for="lastName">Last Name <span class="req">*</span></label>
-              <input type="text" id="lastName" name="lastName" required />
-            </div>
-          </div>
-          <div class="field">
-            <label for="email">Email <span class="req">*</span></label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="field">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" />
-          </div>
-          <div class="field">
-            <label for="comments">Comments <span class="req">*</span></label>
-            <textarea id="comments" name="comments" maxlength="600" required placeholder="Please let us know what's on your mind. Have a question for us? Ask away."></textarea>
-            <div class="char-count"><span id="charCount">0</span> of 600 max characters</div>
-          </div>
-          <button class="btn btn-primary" type="submit" style="width: 100%;">Send message</button>
-          <p class="form-status" id="formStatus"></p>
-        </form>
+  <section class="connect">
+    <div class="wrap">
+      <div class="connect-inner">
+        <p class="eyebrow">Let's Talk</p>
+        <h2>Ready to grow? Let's talk.</h2>
+        <p class="lede">Whether you're a community organisation or a commercial operator, the first step is simple: a conversation. From there, we'll explore opportunities, connect you with the right people, and build relationships that last.</p>
+        <div class="connect-actions">
+          <a class="btn btn-primary" href="contact.html">Start a conversation</a>
+          <a class="connect-phone" href="tel:+61451248292">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            0451 248 292
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -300,26 +265,26 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="../index.html#top" class="brand"><img class="logo-mark" src="../images/GCDS-logo-crop.png" alt="GCDS" /></a>
+        <a href="index.html#top" class="brand"><img class="logo-mark" src="images/GCDS-logo-crop.png" alt="GCDS" /></a>
         <p>Where business meets community and big ideas come to life. Everything starts with a conversation.</p>
       </div>
       <div class="foot-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="../community/index.html">Community Engagement</a></li>
-          <li><a href="../commercial/index.html">Commercial Development</a></li>
-          <li><a href="../partnerships/index.html">Collaborators</a></li>
-          <li><a href="../events/index.html">Local Events &amp; Activations</a></li>
+          <li><a href="community.html">Community Engagement</a></li>
+          <li><a href="commercial.html">Commercial Development</a></li>
+          <li><a href="partnerships.html">Collaborators</a></li>
+          <li><a href="events.html">Local Events &amp; Activations</a></li>
         </ul>
       </div>
       <div class="foot-col">
         <h4>Company</h4>
         <ul>
-          <li><a href="../about/index.html">About</a></li>
-          <li><a href="../who-we-help/index.html">Who We Help</a></li>
-          <li><a href="../how-we-help-you/index.html">How We Help You</a></li>
-          <li><a href="../index.html#testimonials">Testimonials</a></li>
-          <li><a href="../blog/index.html">Insights</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="who-we-help.html">Who We Help</a></li>
+          <li><a href="how-we-help-you.html">How We Help You</a></li>
+          <li><a href="index.html#testimonials">Testimonials</a></li>
+          <li><a href="blog.html">Insights</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -347,7 +312,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>&copy; 2026 Growth Concept Development Services &middot; <a href="../privacy-policy/index.html" class="credit-link">Privacy Policy</a></span>
+      <span>&copy; 2026 Growth Concept Development Services &middot; <a href="privacy-policy.html" class="credit-link">Privacy Policy</a></span>
       <a href="https://thriivdigital.com.au/" class="credit-link">Website by thriiv Digital</a>
     </div>
   </div>
@@ -371,21 +336,6 @@
         var isOpen = group.classList.toggle('is-open');
         btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
-    });
-  })();
-  (function () {
-    var textarea = document.getElementById('comments');
-    var count = document.getElementById('charCount');
-    textarea.addEventListener('input', function () { count.textContent = textarea.value.length; });
-
-    var form = document.getElementById('contactForm');
-    var status = document.getElementById('formStatus');
-    form.addEventListener('submit', function (e) {
-      if (form.action.indexOf('YOUR_FORM_ID') !== -1) {
-        e.preventDefault();
-        status.textContent = 'Form not yet connected — add your Formspree endpoint to activate this form.';
-        status.className = 'form-status is-visible err';
-      }
     });
   })();
 </script>
