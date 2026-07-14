@@ -360,7 +360,8 @@
   .hero-panel .btn-ghost:hover { border-color: #FBF8EE; background: rgba(251, 248, 238, 0.1); }
   .hero-stats {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, auto);
+    justify-content: start;
     gap: 14px 24px;
     margin-top: 22px;
   }
@@ -383,7 +384,7 @@
   }
   .hero-stats .lab-short { display: none; }
 
-  .hero-photo { position: relative; height: calc(100svh - 170px - 46px); border-radius: 20px; overflow: hidden; margin-top: -6px; }
+  .hero-photo { position: relative; height: calc(100svh - 170px - 46px); border-radius: 20px; overflow: hidden; margin-top: -6px; width: 130%; margin-left: -15%; }
   .hero-photo img {
     position: absolute;
     inset: 0;
@@ -402,7 +403,7 @@
   @media (max-width: 980px) {
     .hero { min-height: auto; }
     .hero-grid { grid-template-columns: 1fr; padding: 0; gap: 0; min-height: auto; }
-    .hero-photo { order: -1; aspect-ratio: auto; height: 300px; border-radius: 0; }
+    .hero-photo { order: -1; aspect-ratio: auto; height: 300px; border-radius: 0; width: auto; margin-left: 0; }
     .hero-panel { border-radius: 0; margin: 0; padding: 48px 29px; box-shadow: none; }
     .hero-stats { gap: 14px 24px; }
     .hero-stats .lab-full { display: none; }
