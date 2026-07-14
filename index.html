@@ -132,12 +132,15 @@
     position: sticky;
     top: 0;
     z-index: 40;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.25s ease, background-color 0.25s ease, backdrop-filter 0.25s ease;
+  }
+  header.site.is-scrolled {
     background: color-mix(in srgb, var(--stone) 88%, transparent);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.25s ease;
+    border-bottom-color: var(--line-soft);
   }
-  header.site.is-scrolled { border-bottom-color: var(--line-soft); }
   .nav-row {
     display: flex;
     align-items: center;
