@@ -51,13 +51,10 @@
   .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
   /* ---------- header ---------- */
-  header.site { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--stone) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid transparent; transition: border-color 0.25s ease; }
-  header.site.is-scrolled { border-bottom-color: var(--line-soft); }
-  .nav-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 28px; transition: padding 0.25s ease; }
-  header.site.is-scrolled .nav-row { padding: 10px 28px; }
+  header.site { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--stone) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line-soft); }
+  .nav-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 10px 28px; }
   .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--font-display); font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; color: var(--ink); }
-  .brand img.logo-mark { height: 136px; width: auto; transition: height 0.25s ease; }
-  header.site.is-scrolled .brand img.logo-mark { height: 56px; }
+  .brand img.logo-mark { height: 56px; width: auto; }
   nav.primary { display: flex; margin-left: auto; }
   nav.primary > ul { list-style: none; display: flex; align-items: center; gap: 2px; margin: 0; padding: 0; font-family: var(--font-display); font-size: 0.9rem; font-weight: 500; }
   nav.primary a.top-link { display: flex; align-items: center; gap: 5px; padding: 10px 12px; text-decoration: none; color: var(--ink-soft); border-radius: 3px; transition: color 0.15s ease, background-color 0.15s ease; }
@@ -90,10 +87,10 @@
   }
 
   /* ---------- page banner ---------- */
-  .page-banner { position: relative; overflow: hidden; background: var(--forest); min-height: 320px; display: flex; align-items: center; padding: 48px 0; }
+  .page-banner { position: relative; overflow: hidden; background: var(--forest); min-height: 320px; display: grid; align-items: center; padding: 48px 0; }
   .page-banner-bird { position: absolute; right: -40px; top: 50%; transform: translateY(-50%); width: 340px; z-index: 0; opacity: 0.1; pointer-events: none; }
   .page-banner-bird img { width: 100%; height: auto; display: block; }
-  .page-banner .wrap { position: relative; z-index: 1; }
+  .page-banner .wrap { position: relative; z-index: 1; width: 100%; }
   .page-banner .eyebrow { color: var(--ember); }
   .page-banner h1 { color: #FBF8EE; font-size: clamp(1.9rem, 2vw + 1rem, 2.8rem); font-weight: 800; }
   .page-banner .lede { color: rgba(251, 248, 238, 0.82); margin-top: 14px; max-width: 60ch; }
@@ -121,6 +118,8 @@
   /* ---------- events ---------- */
   section.events { background: var(--surface); border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); }
   .event-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .event-grid.single { grid-template-columns: 1fr; justify-items: center; }
+  .event-grid.single .event-card { max-width: 420px; width: 100%; }
   .event-card { border: 1px solid var(--line); border-radius: 8px; background: var(--stone); display: flex; flex-direction: column; overflow: hidden; transition: transform 0.2s ease, box-shadow 0.2s ease; }
   .event-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(26, 20, 10, 0.1); }
   .event-card .event-photo { position: relative; aspect-ratio: 4 / 3; background: var(--surface-raised); }
@@ -187,8 +186,8 @@
           <a class="top-link" href="../community/index.html">Services <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
           <div class="drop">
             <a href="../community/index.html">Community Engagement</a>
-            <a href="https://growthcds.com.au/commercial/">Commercial Development</a>
-            <a href="https://growthcds.com.au/partnerships/">Collaborators</a>
+            <a href="../commercial/index.html">Commercial Development</a>
+            <a href="../collaborators/index.html">Collaborators</a>
             <a href="../events/index.html">Local Events &amp; Activations</a>
           </div>
         </li>
@@ -226,6 +225,8 @@
   </div>
   <nav class="mobile-nav" aria-label="Mobile">
     <a href="../community/index.html">Community Engagement</a>
+    <a href="../commercial/index.html">Commercial Development</a>
+    <a href="../collaborators/index.html">Collaborators</a>
     <a href="../who-we-help/index.html">Who We Help</a>
     <a href="https://growthcds.com.au/how-we-help-you/">How We Help You</a>
     <a href="../events/index.html">Events</a>
@@ -252,8 +253,8 @@
     <div class="wrap">
       <div class="section-head centered">
         <div>
-          <p class="eyebrow">What's On</p>
-          <h2>Business events &amp; expos.</h2>
+          <p class="eyebrow">What We're Doing</p>
+          <h2>Business events we're a part of.</h2>
         </div>
       </div>
 
@@ -304,7 +305,7 @@
       </div>
 
       <div class="event-panel" id="panel-past" role="tabpanel" aria-labelledby="tab-past">
-        <div class="event-grid" id="past">
+        <div class="event-grid single" id="past">
           <div class="event-card no-logo">
             <div class="event-photo">
               <img src="../GCDS%20IMAGES/linkedin-local.webp" alt="LinkedIn Local North Shore event" />
@@ -355,8 +356,8 @@
         <h4>Services</h4>
         <ul>
           <li><a href="../community/index.html">Community Engagement</a></li>
-          <li><a href="https://growthcds.com.au/commercial/">Commercial Development</a></li>
-          <li><a href="https://growthcds.com.au/partnerships/">Collaborators</a></li>
+          <li><a href="../commercial/index.html">Commercial Development</a></li>
+          <li><a href="../collaborators/index.html">Collaborators</a></li>
           <li><a href="../events/index.html">Local Events &amp; Activations</a></li>
         </ul>
       </div>
@@ -403,14 +404,6 @@
 
 <script>
   (function () {
-    var siteHeader = document.querySelector('header.site');
-    if (siteHeader) {
-      var updateHeaderScroll = function () {
-        siteHeader.classList.toggle('is-scrolled', window.pageYOffset > 8);
-      };
-      window.addEventListener('scroll', updateHeaderScroll, { passive: true });
-      updateHeaderScroll();
-    }
     var tabs = document.querySelectorAll('.event-tab');
     var panels = { upcoming: document.getElementById('panel-upcoming'), past: document.getElementById('panel-past') };
 
