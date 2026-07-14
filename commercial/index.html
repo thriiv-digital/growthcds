@@ -12,7 +12,7 @@
 <style>
   :root {
     --ink: #1A2A1F; --ink-soft: #52685A; --forest: #6A8959; --stone: #F6F2E9; --surface: #FFFFFF;
-    --surface-raised: #EFE8D9; --ember: #CD6A12; --ember-strong: #A4550E; --ember-tint: #F5DFC7;
+    --surface-raised: #EFE8D9; --ember: #CD6A12; --ember-strong: #A4550E; --ember-tint: #F5DFC7; --gold: #E9B64B;
     --line: rgba(26, 42, 31, 0.14); --line-soft: rgba(26, 42, 31, 0.08); --shadow: 0 1px 2px rgba(26, 20, 10, 0.07);
     --font-display: 'Rubik', ui-sans-serif, system-ui, sans-serif; --font-body: 'Manrope', ui-sans-serif, system-ui, sans-serif;
     color-scheme: light;
@@ -72,7 +72,7 @@
   .page-banner-bird { position: absolute; right: -40px; top: 50%; transform: translateY(-50%); width: 340px; z-index: 0; opacity: 0.1; pointer-events: none; }
   .page-banner-bird img { width: 100%; height: auto; display: block; }
   .page-banner .wrap { position: relative; z-index: 1; width: 100%; }
-  .page-banner .eyebrow { color: var(--ember); }
+  .page-banner .eyebrow { color: var(--gold); }
   .page-banner h1 { color: #FBF8EE; font-size: clamp(1.9rem, 2vw + 1rem, 2.8rem); font-weight: 800; }
   .page-banner .lede { color: rgba(251, 248, 238, 0.82); margin-top: 14px; max-width: 60ch; }
   @media (max-width: 760px) { .page-banner { padding: 36px 0; min-height: 260px; } .page-banner-bird { width: 200px; right: -60px; } }
@@ -85,7 +85,7 @@
   .section-head h2 { font-size: clamp(1.7rem, 1.6vw + 1rem, 2.5rem); font-weight: 800; letter-spacing: -0.02em; }
   @media (max-width: 760px) { .section-head { grid-template-columns: 1fr; } }
 
-  .intro-block { max-width: 780px; margin: 0 auto 64px; text-align: center; }
+  .intro-block { max-width: 1440px; margin: 0 auto 64px; text-align: center; }
   .intro-block .lede { margin: 0 auto; }
 
   /* client grid */
@@ -136,14 +136,44 @@
   @media (max-width: 860px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 600px) { .foot-bottom { flex-direction: column; flex-wrap: nowrap; align-items: flex-start; justify-content: flex-start; gap: 8px; } }
   @media (max-width: 540px) { .foot-grid { grid-template-columns: 1fr; } }
+
+  /* testimonials */
+  .testi-carousel { overflow: hidden; }
+  .testi-track { display: flex; align-items: stretch; gap: 24px; transition: transform 0.4s ease; }
+  .testi-card { display: flex; flex: 0 0 calc(50% - 12px); min-width: 0; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 32px 34px; }
+  @media (max-width: 760px) { .testi-card { flex-basis: 100%; } }
+  .testi-card .stars { display: flex; gap: 3px; margin-bottom: 18px; }
+  .testi-card .stars svg { width: 17px; height: 17px; fill: var(--ember); }
+  .testi-card blockquote { margin: 0; font-family: var(--font-body); font-size: 1.12rem; font-weight: 400; line-height: 1.6; color: var(--ink); }
+  .testi-attribution { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
+  .testi-card cite { font-style: normal; font-weight: 700; font-family: var(--font-display); color: var(--forest); font-size: 0.88rem; }
+  .testi-card cite span { display: block; margin-top: 2px; font-weight: 500; font-family: var(--font-body); color: var(--ink-soft); }
+  .testi-nav { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 28px; }
+  .testi-arrow { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: border-color 0.15s ease, background-color 0.15s ease; }
+  .testi-arrow:hover { border-color: var(--forest); background: var(--surface-raised); }
+  .testi-arrow svg { width: 18px; height: 18px; stroke: var(--ink); }
+  .testi-dots { display: flex; gap: 8px; }
+  .testi-dot { width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0; background: var(--line); cursor: pointer; }
+  .testi-dot.is-active { background: var(--forest); }
+  @media (max-width: 640px) { .testi-card { padding: 28px 24px; } }
 </style>
+<meta name="google-site-verification" content="U60WK4yeSPhiNg-MvVnXQB9667du54B6afir8goX6oc" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MZ7EWR6TKN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-MZ7EWR6TKN");
+</script>
 </head>
 <body>
 
 <header class="site">
   <div class="nav-row">
     <a href="../index.html#top" class="brand">
-      <img class="logo-mark" src="../GCDS%20IMAGES/GCDS-logo-new.png" alt="GCDS — Growth Concept Development Services" />
+      <img class="logo-mark" src="../GCDS%20IMAGES/GCDS-logo-crop.png" alt="GCDS — Growth Concept Development Services" />
     </a>
     <nav class="primary" aria-label="Primary">
       <ul>
@@ -152,12 +182,12 @@
           <div class="drop">
             <a href="../community/index.html">Community Engagement</a>
             <a href="../commercial/index.html">Commercial Development</a>
-            <a href="../collaborators/index.html">Collaborators</a>
+            <a href="../partnerships/index.html">Collaborators</a>
             <a href="../events/index.html">Local Events &amp; Activations</a>
           </div>
         </li>
         <li><a class="top-link" href="../who-we-help/index.html">Who We Help</a></li>
-        <li><a class="top-link" href="https://growthcds.com.au/how-we-help-you/">How We Help You</a></li>
+        <li><a class="top-link" href="../how-we-help-you/index.html">How We Help You</a></li>
         <li class="has-drop">
           <a class="top-link" href="../events/index.html">Events <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
           <div class="drop">
@@ -171,7 +201,7 @@
             <a href="../about/index.html">About</a>
             <a href="../index.html#testimonials">Testimonials</a>
             <a href="../index.html#faq">FAQs</a>
-            <a href="https://growthcds.com.au/blog/">Insights</a>
+            <a href="../blog/index.html">Insights</a>
           </div>
         </li>
       </ul>
@@ -191,13 +221,13 @@
   <nav class="mobile-nav" aria-label="Mobile">
     <a href="../community/index.html">Community Engagement</a>
     <a href="../commercial/index.html">Commercial Development</a>
-    <a href="../collaborators/index.html">Collaborators</a>
+    <a href="../partnerships/index.html">Collaborators</a>
     <a href="../commercial/index.html">Commercial Development</a>
-    <a href="../collaborators/index.html">Collaborators</a>
+    <a href="../partnerships/index.html">Collaborators</a>
     <a href="../who-we-help/index.html">Who We Help</a>
-    <a href="https://growthcds.com.au/how-we-help-you/">How We Help You</a>
+    <a href="../how-we-help-you/index.html">How We Help You</a>
     <a href="../events/index.html">Events</a>
-    <a href="https://growthcds.com.au/blog/">Insights</a>
+    <a href="../blog/index.html">Insights</a>
     <a href="../index.html#testimonials">Testimonials</a>
     <a href="../index.html#faq">FAQs</a>
     <a href="../about/index.html">About</a>
@@ -259,6 +289,73 @@
     </div>
   </section>
 
+  <section id="testimonials" class="tight">
+    <div class="wrap">
+      <div class="section-head centered">
+        <div>
+          <p class="eyebrow">Testimonials</p>
+          <h2>Why people are choosing us for their business growth.</h2>
+        </div>
+      </div>
+      <div class="testi-carousel">
+        <div class="testi-track">
+          <div class="testi-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+            </div>
+            <blockquote>Luke's superpower is connecting people and businesses. He does this by listening and ensuring he's really clear about the goals and outcomes required. He then works with you to achieve those objectives and, in many cases, exceed what was expected. If you're looking to grow your business, have a chat with Luke and see what may be possible.</blockquote>
+            <div class="testi-attribution">
+              <cite>Libby Salmon<span>Bio-Circuitry</span></cite>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+            </div>
+            <blockquote>Luke consistently demonstrates a remarkable blend of integrity, dedication, and skill. In his professional role as a Corporate Partnerships Specialist, he has proven to be an invaluable asset. His problem-solving abilities are outstanding, often tackling complex challenges with a thoughtful and innovative approach.</blockquote>
+            <div class="testi-attribution">
+              <cite>Mark Armstrong<span>Hardi Australia</span></cite>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+            </div>
+            <blockquote>I worked with Luke on a number of events — from sponsorships to speaking engagements — at both EY and Hollard, and have always found him to be motivated, forward-thinking, and knowledgeable within his domain. He would be an asset to any company.</blockquote>
+            <div class="testi-attribution">
+              <cite>Jamie Smith<span>EY</span></cite>
+            </div>
+          </div>
+        </div>
+        <div class="testi-nav">
+          <button class="testi-arrow testi-prev" aria-label="Previous testimonial" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="testi-dots">
+            <button class="testi-dot is-active" data-index="0" aria-label="Show testimonial 1" type="button"></button>
+            <button class="testi-dot" data-index="1" aria-label="Show testimonial 2" type="button"></button>
+            <button class="testi-dot" data-index="2" aria-label="Show testimonial 3" type="button"></button>
+          </div>
+          <button class="testi-arrow testi-next" aria-label="Next testimonial" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="connect">
     <div class="wrap">
       <div class="connect-inner">
@@ -282,7 +379,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="../index.html#top" class="brand"><img class="logo-mark" src="../GCDS%20IMAGES/GCDS-logo-new.png" alt="GCDS" /></a>
+        <a href="../index.html#top" class="brand"><img class="logo-mark" src="../GCDS%20IMAGES/GCDS-logo-crop.png" alt="GCDS" /></a>
         <p>Where business meets community and big ideas come to life. Everything starts with a conversation.</p>
       </div>
       <div class="foot-col">
@@ -290,7 +387,7 @@
         <ul>
           <li><a href="../community/index.html">Community Engagement</a></li>
           <li><a href="../commercial/index.html">Commercial Development</a></li>
-          <li><a href="../collaborators/index.html">Collaborators</a></li>
+          <li><a href="../partnerships/index.html">Collaborators</a></li>
           <li><a href="../events/index.html">Local Events &amp; Activations</a></li>
         </ul>
       </div>
@@ -299,9 +396,9 @@
         <ul>
           <li><a href="../about/index.html">About</a></li>
           <li><a href="../who-we-help/index.html">Who We Help</a></li>
-          <li><a href="https://growthcds.com.au/how-we-help-you/">How We Help You</a></li>
+          <li><a href="../how-we-help-you/index.html">How We Help You</a></li>
           <li><a href="../index.html#testimonials">Testimonials</a></li>
-          <li><a href="https://growthcds.com.au/blog/">Insights</a></li>
+          <li><a href="../blog/index.html">Insights</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -329,11 +426,74 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>&copy; 2026 Growth Concept Development Services &middot; <a href="https://growthcds.com.au/privacy-policy/" class="credit-link">Privacy Policy</a></span>
+      <span>&copy; 2026 Growth Concept Development Services &middot; <a href="../privacy-policy/index.html" class="credit-link">Privacy Policy</a></span>
       <a href="https://thriivdigital.com.au/" class="credit-link">Website by thriiv Digital</a>
     </div>
   </div>
 </footer>
 
+<script>
+  (function () {
+    var track = document.querySelector('.testi-track');
+    var testiDots = Array.prototype.slice.call(document.querySelectorAll('.testi-dot'));
+    if (!track) return;
+    var originals = Array.prototype.slice.call(track.children);
+    var n = originals.length;
+    if (n < 2) return;
+
+    var lastClone = originals[n - 1].cloneNode(true);
+    var firstClone = originals[0].cloneNode(true);
+    lastClone.setAttribute('aria-hidden', 'true');
+    firstClone.setAttribute('aria-hidden', 'true');
+    track.insertBefore(lastClone, track.firstChild);
+    track.appendChild(firstClone);
+
+    var allCards = Array.prototype.slice.call(track.children);
+    var pos = 1;
+    var animating = false;
+
+    function stepSize() {
+      var cardRect = allCards[0].getBoundingClientRect();
+      var gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || 0) || 0;
+      return cardRect.width + gap;
+    }
+
+    function render(animate) {
+      var step = stepSize();
+      track.style.transition = animate ? '' : 'none';
+      track.style.transform = 'translateX(' + (-pos * step) + 'px)';
+      var realIndex = (pos - 1 + n) % n;
+      testiDots.forEach(function (dot, idx) { dot.classList.toggle('is-active', idx === realIndex); });
+    }
+
+    var stuckTimer = null;
+    function finishAnimating() {
+      animating = false;
+      if (stuckTimer) { clearTimeout(stuckTimer); stuckTimer = null; }
+      if (pos >= n + 1) { pos = 1; render(false); }
+      else if (pos <= 0) { pos = n; render(false); }
+    }
+    track.addEventListener('transitionend', finishAnimating);
+
+    function goTo(newPos) {
+      if (animating) return;
+      animating = true;
+      pos = newPos;
+      render(true);
+      stuckTimer = setTimeout(finishAnimating, 450);
+    }
+
+    var prevBtn = document.querySelector('.testi-prev');
+    var nextBtn = document.querySelector('.testi-next');
+    if (prevBtn) prevBtn.addEventListener('click', function () { goTo(pos - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { goTo(pos + 1); });
+    testiDots.forEach(function (dot, idx) {
+      dot.addEventListener('click', function () { goTo(idx + 1); });
+    });
+
+    window.addEventListener('resize', function () { render(false); });
+    render(false);
+  })();
+</script>
 </body>
 </html>

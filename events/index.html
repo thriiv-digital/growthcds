@@ -19,7 +19,7 @@
     --surface-raised: #EFE8D9;
     --ember: #CD6A12;
     --ember-strong: #A4550E;
-    --ember-tint: #F5DFC7;
+    --ember-tint: #F5DFC7; --gold: #E9B64B;
     --line: rgba(26, 42, 31, 0.14);
     --line-soft: rgba(26, 42, 31, 0.08);
     --shadow: 0 1px 2px rgba(26, 20, 10, 0.07);
@@ -29,6 +29,7 @@
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
+  [id] { scroll-margin-top: 100px; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
@@ -91,7 +92,7 @@
   .page-banner-bird { position: absolute; right: -40px; top: 50%; transform: translateY(-50%); width: 340px; z-index: 0; opacity: 0.1; pointer-events: none; }
   .page-banner-bird img { width: 100%; height: auto; display: block; }
   .page-banner .wrap { position: relative; z-index: 1; width: 100%; }
-  .page-banner .eyebrow { color: var(--ember); }
+  .page-banner .eyebrow { color: var(--gold); }
   .page-banner h1 { color: #FBF8EE; font-size: clamp(1.9rem, 2vw + 1rem, 2.8rem); font-weight: 800; }
   .page-banner .lede { color: rgba(251, 248, 238, 0.82); margin-top: 14px; max-width: 60ch; }
   @media (max-width: 760px) {
@@ -172,13 +173,23 @@
   @media (max-width: 600px) { .foot-bottom { flex-direction: column; flex-wrap: nowrap; align-items: flex-start; justify-content: flex-start; gap: 8px; } }
   @media (max-width: 540px) { .foot-grid { grid-template-columns: 1fr; } }
 </style>
+<meta name="google-site-verification" content="U60WK4yeSPhiNg-MvVnXQB9667du54B6afir8goX6oc" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MZ7EWR6TKN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+
+  gtag("config", "G-MZ7EWR6TKN");
+</script>
 </head>
 <body>
 
 <header class="site">
   <div class="nav-row">
     <a href="../index.html#top" class="brand">
-      <img class="logo-mark" src="../GCDS%20IMAGES/GCDS-logo-new.png" alt="GCDS — Growth Concept Development Services" />
+      <img class="logo-mark" src="../GCDS%20IMAGES/GCDS-logo-crop.png" alt="GCDS — Growth Concept Development Services" />
     </a>
     <nav class="primary" aria-label="Primary">
       <ul>
@@ -187,12 +198,12 @@
           <div class="drop">
             <a href="../community/index.html">Community Engagement</a>
             <a href="../commercial/index.html">Commercial Development</a>
-            <a href="../collaborators/index.html">Collaborators</a>
+            <a href="../partnerships/index.html">Collaborators</a>
             <a href="../events/index.html">Local Events &amp; Activations</a>
           </div>
         </li>
         <li><a class="top-link" href="../who-we-help/index.html">Who We Help</a></li>
-        <li><a class="top-link" href="https://growthcds.com.au/how-we-help-you/">How We Help You</a></li>
+        <li><a class="top-link" href="../how-we-help-you/index.html">How We Help You</a></li>
         <li class="has-drop current">
           <a class="top-link" href="../events/index.html">Events <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
           <div class="drop">
@@ -206,7 +217,7 @@
             <a href="../about/index.html">About</a>
             <a href="../index.html#testimonials">Testimonials</a>
             <a href="../index.html#faq">FAQs</a>
-            <a href="https://growthcds.com.au/blog/">Insights</a>
+            <a href="../blog/index.html">Insights</a>
           </div>
         </li>
       </ul>
@@ -226,11 +237,11 @@
   <nav class="mobile-nav" aria-label="Mobile">
     <a href="../community/index.html">Community Engagement</a>
     <a href="../commercial/index.html">Commercial Development</a>
-    <a href="../collaborators/index.html">Collaborators</a>
+    <a href="../partnerships/index.html">Collaborators</a>
     <a href="../who-we-help/index.html">Who We Help</a>
-    <a href="https://growthcds.com.au/how-we-help-you/">How We Help You</a>
+    <a href="../how-we-help-you/index.html">How We Help You</a>
     <a href="../events/index.html">Events</a>
-    <a href="https://growthcds.com.au/blog/">Insights</a>
+    <a href="../blog/index.html">Insights</a>
     <a href="../index.html#testimonials">Testimonials</a>
     <a href="../index.html#faq">FAQs</a>
     <a href="../about/index.html">About</a>
@@ -349,7 +360,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="../index.html#top" class="brand"><img class="logo-mark" src="../GCDS%20IMAGES/GCDS-logo-new.png" alt="GCDS" /></a>
+        <a href="../index.html#top" class="brand"><img class="logo-mark" src="../GCDS%20IMAGES/GCDS-logo-crop.png" alt="GCDS" /></a>
         <p>Where business meets community and big ideas come to life. Everything starts with a conversation.</p>
       </div>
       <div class="foot-col">
@@ -357,7 +368,7 @@
         <ul>
           <li><a href="../community/index.html">Community Engagement</a></li>
           <li><a href="../commercial/index.html">Commercial Development</a></li>
-          <li><a href="../collaborators/index.html">Collaborators</a></li>
+          <li><a href="../partnerships/index.html">Collaborators</a></li>
           <li><a href="../events/index.html">Local Events &amp; Activations</a></li>
         </ul>
       </div>
@@ -366,9 +377,9 @@
         <ul>
           <li><a href="../about/index.html">About</a></li>
           <li><a href="../who-we-help/index.html">Who We Help</a></li>
-          <li><a href="https://growthcds.com.au/how-we-help-you/">How We Help You</a></li>
+          <li><a href="../how-we-help-you/index.html">How We Help You</a></li>
           <li><a href="../index.html#testimonials">Testimonials</a></li>
-          <li><a href="https://growthcds.com.au/blog/">Insights</a></li>
+          <li><a href="../blog/index.html">Insights</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -396,7 +407,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>&copy; 2026 Growth Concept Development Services &middot; <a href="https://growthcds.com.au/privacy-policy/" class="credit-link">Privacy Policy</a></span>
+      <span>&copy; 2026 Growth Concept Development Services &middot; <a href="../privacy-policy/index.html" class="credit-link">Privacy Policy</a></span>
       <a href="https://thriivdigital.com.au/" class="credit-link">Website by thriiv Digital</a>
     </div>
   </div>
